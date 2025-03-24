@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Confirmation</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        h2 { color: #4CAF50; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <h1>QR Code Attendance System</h1>
+    <h2 id="status">Checking attendance...</h2>
+
+    <script>
+        function checkAttendance() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const scannedDate = urlParams.get('date');
+            let today = new Date().toISOString().split('T')[0];
+
+            if (scannedDate === today) {
+                document.getElementById("status").innerHTML = "✅ Attendance Marked Successfully!";
+            } else {
+                document.getElementById("status").innerHTML = "❌ Invalid QR Code!";
+                document.getElementById("status").classList.add("error");
+            }
+        }
+
+        checkAttendance();
+    </script>
+
+</body>
+</html>
