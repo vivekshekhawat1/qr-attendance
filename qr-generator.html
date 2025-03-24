@@ -19,7 +19,8 @@
     <script>
         function generateQR() {
             let today = new Date().toISOString().split('T')[0];
-            let attendanceURL = "https://yourusername.github.io/qr-attendance/?date=" + today; // 🔹 REPLACE with your GitHub Pages link
+            let attendanceURL = "let attendanceURL = "https://vivekshekhawat1.github.io/qr-attendance/?date=" + today;
+ // 🔹 REPLACE with your GitHub Pages link
             
             document.getElementById("qr-code").innerHTML = ""; // Clear previous QR
             new QRCode(document.getElementById("qr-code"), attendanceURL); // Generate new QR
